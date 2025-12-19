@@ -75,14 +75,61 @@
 
 })();
 
-// Back to Top Button Functionality
+// Header shrink + Back to Top Button Functionality
 document.addEventListener('DOMContentLoaded', function() {
-  var backToTopBtn = document.getElementById('backToTop');
-  if (!backToTopBtn) return;
-  window.addEventListener('scroll', function() {
-    backToTopBtn.style.display = (window.scrollY > 200) ? 'block' : 'none';
-  });
-  backToTopBtn.addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  // Shrink header on scroll
+  const header = document.querySelector('.header');
+  if(header){
+    const applyHeaderState = () => {
+      if(window.scrollY > 50){
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    };
+    applyHeaderState();
+    window.addEventListener('scroll', applyHeaderState, { passive: true });
+  }
+
+  // Back to Top button
+  const backToTopBtn = document.getElementById('backToTop') || document.getElementById('back-to-top');
+  if(backToTopBtn){
+    const toggleBackToTop = () => {
+      backToTopBtn.style.display = (window.scrollY > 200) ? 'block' : 'none';
+    };
+    toggleBackToTop();
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // File upload status indicator
+  const fileInput = document.getElementById('cv');
+  const fileStatus = document.getElementById('file-status');
+  const removeBtn = document.getElementById('remove-file');
+  if(fileInput && fileStatus){
+    fileInput.addEventListener('change', function() {
+      if(this.files && this.files.length > 0){
+        fileStatus.textContent = this.files[0].name;
+        fileStatus.classList.add('uploaded');
+        if(removeBtn) removeBtn.style.display = 'inline-flex';
+      } else {
+        fileStatus.textContent = 'No file chosen';
+        fileStatus.classList.remove('uploaded');
+        if(removeBtn) removeBtn.style.display = 'none';
+      }
+    });
+    
+    // Remove file functionality
+    if(removeBtn){
+      removeBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        fileInput.value = '';
+        fileStatus.textContent = 'No file chosen';
+        fileStatus.classList.remove('uploaded');
+        removeBtn.style.display = 'none';
+      });
+    }
+  }
 });

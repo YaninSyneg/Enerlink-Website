@@ -44,7 +44,7 @@
   <div class="hero-inner">
     <div class="container hero-grid">
       <div class="hero-card">
-        <div class="h-eyebrow">Careers</div>
+        <div class="h-eyebrow-top">Careers</div>
         <h1 class="serif">Join a disciplined trading culture</h1>
         <p class="hero-lede">
           We value integrity, analytical rigor, and collaboration—supported by compliance, transparency, and continuous development.
@@ -100,13 +100,12 @@
       </div>
 
       <div class="field full">
-        <label for="cv">Upload CV <small style="color:rgba(10,15,12,.6);">(PDF, DOC, DOCX)</small></label>
+        <label for="cv">Upload CV <small style="color:rgba(10,15,12,.6);">(PDF, DOC, DOCX)</small> <span id="file-status" class="file-status">No file chosen</span> <button type="button" id="remove-file" class="remove-file-btn" style="display:none;">✕</button></label>
         <input id="cv" name="cv" type="file" accept=".pdf,.doc,.docx" required />
       </div>
 
-      <div class="field full" style="margin-top:12px; display:flex; gap:10px;">
+      <div class="full" style="margin-top:12px; display:flex; gap:10px;">
         <button type="submit" class="btn btn-primary">Submit application</button>
-        <button type="reset" class="btn btn-ghost" type="reset">Reset</button>
       </div>
     </form>
   </div>
