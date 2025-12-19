@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Project — Adobe Spark Embed</title>
+  <style>
+    body{font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial; margin:32px;}
+    .wrap{max-width:980px;margin:0 auto}
+
+    /* Responsive embed (keeps aspect ratio) */
+    .embed{position:relative;width:100%;height:0;padding:0;border-radius:8px;overflow:hidden;background:#fff}
+    /* Modern browsers: aspect-ratio fallback for clarity */
+    .embed{aspect-ratio: 16 / 9}
+    /* Legacy fallback: maintain 16:9 using pseudo element
+       (keeps the iframe responsive in older browsers) */
+    .embed::before{content:'';display:block;padding-bottom:56.25%}
+
+    .embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .note{color:#555;font-size:.95rem;margin-bottom:12px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Check out my Adobe Spark Page</h1>
+    <p class="note">Replace <code>YOUR_UNIQUE_ID</code> in the iframe src with your Adobe Spark page ID.</p>
+
+    <div class="embed" aria-label="Adobe Spark embed">
+      <iframe src="https://express.adobe.com/page/Enerlink.SG6035/" allowfullscreen loading="lazy" referrerpolicy="no-referrer"></iframe>
+    </div>
+
+    <p style="margin-top:18px"><a href="index.html">← Back to site</a></p>
+  </div>
+</body>
+</html>
