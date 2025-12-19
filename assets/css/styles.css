@@ -51,7 +51,7 @@ button,input,textarea{font:inherit}
   letter-spacing: .12em;
   text-transform: uppercase;
   font-size: .82rem;
-  color: rgba(10,15,12,.65);
+  color: #ffffff;
 }
 .serif{
   font-family: ui-serif, "Georgia", "Times New Roman", Times, serif;
@@ -107,12 +107,26 @@ p{margin:0 0 14px 0}
   background: rgba(6,17,12,.88);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(231,239,233,.10);
+  transition: all 0.3s ease;
+}
+.header.scrolled .brand-badge{
+  width: 80px;
+  height: 80px;
+}
+.header.scrolled .nav{
+  padding: 8px 0;
+}
+.header.scrolled .brand-name{
+  font-size: 1rem;
+}
+.header.scrolled .brand-sub{
+  font-size: 0.7rem;
 }
 .nav{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding: 14px 0;
+  padding: 10px 0;
 }
 .brand{
   display:flex;
@@ -120,8 +134,8 @@ p{margin:0 0 14px 0}
   gap:12px;
 }
 .brand-badge{
-  width: 160px;
-  height: 160px;
+  width: 120px;
+  height: 120px;
   border-radius: 999px;
   border: 1px solid rgba(215,195,139,.65);
   display:grid;
@@ -156,10 +170,10 @@ p{margin:0 0 14px 0}
 .navlinks{
   display:flex;
   align-items:center;
-  gap: 22px;
+  gap: 18px;
 }
 .navlinks a{
-  color: rgba(231,239,233,.86);
+  color: #ffffff;
   font-size: .95rem;
   padding: 8px 2px;
   position:relative;
@@ -495,4 +509,18 @@ p{margin:0 0 14px 0}
   }
   .navlinks.open{display:flex}
   .burger{display:grid}
+}
+
+/* Back to top button */
+#back-to-top{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: var(--emerald);
+  color: white;
+}
+#back-to-top.visible{
+  opacity: 1;
+  visibility: visible;
 }
