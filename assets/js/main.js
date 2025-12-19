@@ -74,3 +74,15 @@
 
 
 })();
+
+// Back to Top Button Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  var backToTopBtn = document.getElementById('backToTop');
+  if (!backToTopBtn) return;
+  window.addEventListener('scroll', function() {
+    backToTopBtn.style.display = (window.scrollY > 200) ? 'block' : 'none';
+  });
+  backToTopBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
