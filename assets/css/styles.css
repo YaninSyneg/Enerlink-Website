@@ -336,6 +336,8 @@ p{margin:0 0 14px 0}
   padding: 26px 26px 24px;
   box-shadow: var(--shadow-soft);
 }
+.hero-card .h-eyebrow{color: rgba(227, 231, 228, 0.807)}
+
 .hero-title{
   font-weight: 650;
 }
@@ -386,7 +388,7 @@ p{margin:0 0 14px 0}
   box-shadow: 0 18px 45px rgba(0,0,0,.10);
 }
 .panel .h-eyebrow{color: rgba(231,239,233,.72)}
-.panel.light .h-eyebrow{color: rgba(241, 245, 243, 0.774)}
+.panel.light .h-eyebrow{color: rgba(112, 115, 114, 0.774)}
 
 .media-frame{
   border-radius: var(--radius-lg);
