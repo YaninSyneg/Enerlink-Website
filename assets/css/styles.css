@@ -410,6 +410,8 @@ p{margin:0 0 14px 0}
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
   margin-top: 26px;
+  width: 100%;
+  max-width: 100%;
 }
 .card{
   border-radius: var(--radius);
@@ -417,10 +419,14 @@ p{margin:0 0 14px 0}
   border: 1px solid rgba(215,195,139,.42);
   background: rgba(11,29,20,.55);
   box-shadow: var(--shadow-soft);
+  min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 .card h3{
   font-size: 1.15rem;
   margin-bottom: 8px;
+  word-wrap: break-word;
 }
 .card p{color: rgba(231,239,233,.82); margin:0}
 .cards.center-row{
@@ -680,6 +686,7 @@ p{margin:0 0 14px 0}
   .hero-grid{grid-template-columns: 1fr}
   .split, .split.reverse{grid-template-columns: 1fr}
   .cards{grid-template-columns: repeat(2, 1fr)}
+  .cards.center-row .card:last-child{grid-column: 1 / -1}
   .footer-grid{grid-template-columns: 1fr 1fr}
 }
 
@@ -738,6 +745,8 @@ p{margin:0 0 14px 0}
   
   /* Single column cards */
   .cards{grid-template-columns: 1fr}
+  .cards.center-row{grid-template-columns: 1fr}
+  .cards.center-row .card:last-child{grid-column: 1; justify-self: stretch}
   
   /* Smaller brand badge */
   .brand-badge{
