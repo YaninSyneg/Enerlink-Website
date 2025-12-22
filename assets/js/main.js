@@ -77,53 +77,21 @@
 
 // Header shrink + Back to Top Button Functionality
 document.addEventListener('DOMContentLoaded', function() {
-// OBJECT ORIENTED PROGRAMMING
-class ShrinkingElement {
-    constructor(selector, w) {
-        this.selector = selector
-        this.element = null;
-        this.styles = '';
-        this.init();
-        console.log(selector, this.element)
+  // Shrink header on scroll
+  const header = document.querySelector('.header');
+  if(header){
+    const applyHeaderState = () => {
+      if(window.scrollY > 50){
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    };
+    applyHeaderState();
+    window.addEventListener('scroll', applyHeaderState, { passive: true });
+  }
 
-        w.addEventListener('scroll', () => {
-            console.log('scrolling');
-            w.scrollY > 10 
-                ? this.element.classList.add('small') 
-                : this.element.classList.remove('small')
-        })
-    }
-
-    getElement() {
-        this.element = document.querySelector(this.selector)
-    }
-
-    addStyles() {
-        this.styles = `
-            ${this.selector} {
-                transition: height 0.5s ease-in-out;
-            }
-
-            ${this.selector}.small {
-                height: 60px;
-            }
-        `
-        const styleTag = document.createElement('style');
-        styleTag.innerHTML = this.styles;
-        document.head.appendChild(styleTag);
-        console.log(styleTag);
-    }
-
-    init() {
-        this.getElement();
-        this.addStyles();
-    }
-
-
-}
-
-
-//Back to Top button
+  // Back to Top button
   const backToTopBtn = document.getElementById('backToTop') || document.getElementById('back-to-top');
   if(backToTopBtn){
     const toggleBackToTop = () => {
