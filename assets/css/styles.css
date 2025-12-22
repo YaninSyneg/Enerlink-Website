@@ -22,35 +22,35 @@
   --shadow: 0 18px 45px rgba(0,0,0,.35);
   --shadow-soft: 0 12px 28px rgba(0,0,0,.22);
 
-  --radius: 18px;
+    padding: 14px 0;
   --radius-lg: 26px;
 
   --max: 1180px;
-}
-
+    width: 160px;
+    height: 160px;
 /* Reset */
 *{box-sizing:border-box}
-html,body{margin:0;padding:0}
+    width: 42px;height:42px;
 body{
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
   background: var(--paper);
   color: var(--ink);
-  line-height: 1.6;
+    gap: 22px;
 }
 img{max-width:100%;display:block}
 
 /* Back to Top Button Styles */
 #backToTop {
-  background: var(--emerald, #007bff);
+    padding: 8px 2px;
   color: #fff;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
-  opacity: 0.8;
-  transition: opacity 0.3s;
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
+  /* Shrink header when scrolled */
+  .header.scrolled .nav{ padding: 8px 0; }
+  .header.scrolled .brand-badge{ width: 96px; height: 96px; }
+  .header.scrolled .icon-btn{ width: 36px; height: 36px; }
+  .header.scrolled .navlinks{ gap: 16px; }
+  .header.scrolled .navlinks a{ padding: 6px 2px; }
   z-index: 99;
   padding: 10px 20px;
   font-size: 16px;
@@ -207,6 +207,7 @@ p{margin:0 0 14px 0}
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: left;
+
   transform-origin: left;
   -webkit-transition: -webkit-transform .2s ease;
   transition: transform .2s ease;
