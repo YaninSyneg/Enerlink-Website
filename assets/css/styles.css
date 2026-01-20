@@ -1,5 +1,5 @@
 /* =========================
-   ENERLINK — Luxury Emerald UI
+   CREATED BY ENERLINK 
    ========================= */
 
 :root{
@@ -72,7 +72,7 @@ button,input,textarea{font:inherit}
   letter-spacing: .12em;
   text-transform: uppercase;
   font-size: .82rem;
-  color: rgba(44, 43, 43, 0.896);
+  color: rgba(224, 222, 222, 0.896);
 }
 
 .h-eyebrow-top{
